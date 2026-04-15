@@ -1,0 +1,117 @@
+{
+  "info": {
+    "name": "Transaction API Collection",
+    "description": "Collection untuk testing Transaction API dengan MySQL",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Test Connection",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/transactions/test",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "transactions", "test"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Transactions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/transactions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "transactions"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Transaction by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/transactions/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "transactions", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create New Transaction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productID\": \"10004\",\n  \"productName\": \"New Product from Postman\",\n  \"amount\": \"3000\",\n  \"customerName\": \"Test Customer\",\n  \"status\": 0,\n  \"createBy\": \"postman_user\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/transactions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "transactions"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Transaction",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productID\": \"10004-updated\",\n  \"productName\": \"Updated Product Name\",\n  \"amount\": \"3500\",\n  \"customerName\": \"Updated Customer Name\",\n  \"status\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/transactions/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "transactions", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Transaction",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/transactions/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "transactions", "3"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
